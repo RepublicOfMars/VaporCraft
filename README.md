@@ -1,4 +1,4 @@
-# IgisShell
+# VaporShell
 
-An empty shell to serve as a starting point for using Igis.
+An empty shell to serve as a starting point for using Vapor.
 
