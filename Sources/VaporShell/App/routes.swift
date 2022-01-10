@@ -14,8 +14,10 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 import Vapor
-import Fluent
-import FluentMySQLDriver
+
+// UNCOMMENT-DATABASE to configure database example
+// import Fluent
+// import FluentMySQLDriver
 
 func routes(_ app: Application) throws {
     

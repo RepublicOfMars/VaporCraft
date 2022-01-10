@@ -15,9 +15,9 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import Vapor
 
-// UNCOMMENT to use database
-import Fluent
-import FluentMySQLDriver
+// UNCOMMENT-DATABASE to configure database example
+// import Fluent
+// import FluentMySQLDriver
 
 // configures your application
 public func configure(_ app: Application) throws {
