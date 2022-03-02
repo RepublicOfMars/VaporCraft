@@ -16,6 +16,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 import Vapor
 
 func routes(_ app: Application) throws {
+    let world = World()
     
     app.get { req in
         return "It works!"
