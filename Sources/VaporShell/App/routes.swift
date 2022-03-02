@@ -21,4 +21,30 @@ func routes(_ app: Application) throws {
     app.get { req in
         return "It works!"
     }
+
+    app.get("getBlock") { req -> BlockData in
+        guard let x = try? req.query.get(Int.self, at: "x") else {
+            throw Abort(.badRequest)
+        }
+        guard let y = try? req.query.get(Int.self, at: "y") else {
+            throw Abort(.badRequest)
+        }
+        guard let z = try? req.query.get(Int.self, at: "z") else {
+            throw Abort(.badRequest)
+        }
+        if  y >= 0 && y < world.Blocks.count {
+            if  x >= 0 && x < world.Blocks[y].count {
+                if  z >= 0 && z < world.Blocks[y][x].count {
+                    let block = world.Blocks[y][x][z]
+                    return BlockData(block)
+                } else {
+                    throw Abort(.badRequest)
+                }
+            } else {
+                throw Abort(.badRequest)
+            }
+        } else {
+            throw Abort(.badRequest)
+        }
+    }
 }
