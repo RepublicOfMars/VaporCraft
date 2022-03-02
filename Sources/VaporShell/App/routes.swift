@@ -51,19 +51,6 @@ func routes(_ app: Application) throws {
         guard let z = try? req.query.get(Int.self, at: "z") else {
             throw Abort(.badRequest)
         }
-        if  y >= 0 && y < world.Blocks.count {
-            if  x >= 0 && x < world.Blocks[y].count {
-                if  z >= 0 && z < world.Blocks[y][x].count {
-                    let block = world.Blocks[y][x][z]
-                    return BlockData(block)
-                } else {
-                    throw Abort(.badRequest)
-                }
-            } else {
-                throw Abort(.badRequest)
-            }
-        } else {
-            throw Abort(.badRequest)
-        }
+        return BlockData(world.getBlock(at:BlockPoint3d(x:x, y:y, z:z)))
     }
 }
