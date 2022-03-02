@@ -15,7 +15,7 @@ class World {
     init(seed:Int=0) {
         Blocks = []
         self.seed = seed
-        self.worldSize = (horizontal:256, vertical:64)
+        self.worldSize = (horizontal:128, vertical:64)
 
         for y in 0 ..< worldSize.vertical {
             Blocks.append([])
