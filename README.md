@@ -1,7 +1,5 @@
-# VaporShell
+# VaporCraft
 
-An empty shell to serve as a starting point for using Vapor.
+Server hosting for IGIS Craft to allow multiplayer.
 
-* To serve files from the /Public folder, search for "UNCOMMENT-PUBLIC" and uncomment
-* For a database example, search for "UNCOMMENT-DATABASE" and uncomment.
-
+(WIP, Non-funtional at the moment)
