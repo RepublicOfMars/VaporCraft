@@ -22,6 +22,25 @@ func routes(_ app: Application) throws {
         return "It works!"
     }
 
+
+    app.put("putBlock", ":x", ":y", ":z", ":type") { req -> String in
+        guard let x = req.parameters.get("x", as: Int.self) else {
+            throw Abort(.badRequest)
+        }
+        guard let y = req.parameters.get("y", as: Int.self) else {
+            throw Abort(.badRequest)
+        }
+        guard let z = req.parameters.get("z", as: Int.self) else {
+            throw Abort(.badRequest)
+        }
+        
+        guard let type = req.parameters.get("type", as: String.self) else {
+            throw Abort(.badRequest)
+        }
+        world.setBlock(at:BlockPoint3d(x:x, y:y, z:z), to:type)
+        return "Block at \(x), \(y), \(z) changed to \(type)"
+    }
+
     app.get("getBlock") { req -> BlockData in
         guard let x = try? req.query.get(Int.self, at: "x") else {
             throw Abort(.badRequest)
